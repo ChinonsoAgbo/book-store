@@ -56,6 +56,7 @@ jobs:
     - name: Build and push Docker images
       uses: docker/build-push-action@v4.0.0
       with:
+        image: chinonsoagbo/books
         tags: ${{secrets.DOCKER_USERNAME}}/bookstore-${{ env.COMPONENT }}:${{github.run_number}}
         context: ./${{ env.COMPONENT }}
         platforms: linux/amd64,linux/arm64/v8
